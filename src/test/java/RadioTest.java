@@ -197,4 +197,24 @@ public class RadioTest {
         radio.nextStation();
         assertEquals(0, radio.getCurrentStation());
     }
+
+    // Новые тесты
+
+    @Test
+    void shouldCreateRadioWithDefaultTenStations() {
+        Radio radio = new Radio();
+        assertEquals(10, radio.getNumberOfStations());
+    }
+
+    @Test
+    void shouldCreateRadioWithCustomNumberOfStations() {
+        Radio radio = new Radio(30);
+        assertEquals(30, radio.getNumberOfStations());
+    }
+
+    @Test
+    void shouldSetDefaultTenStationsWhenInvalidNumberProvided() {
+        Radio radio = new Radio(0);
+        assertEquals(10, radio.getNumberOfStations());
+    }
 }
